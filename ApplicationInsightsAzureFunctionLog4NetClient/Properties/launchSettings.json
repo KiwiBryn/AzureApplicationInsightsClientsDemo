@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ApplicationInsightsAzureFunctionLog4NetClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "InstrumentationKey": "3d12651a-19c3-4b2b-b5b7-7001351cb1a6"
+      }
+    }
+  }
+}

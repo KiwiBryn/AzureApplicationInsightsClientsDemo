@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureApplicationInsightsClientConsole", "AzureApplicationInsightsClientConsole\AzureApplicationInsightsClientConsole.csproj", "{577BF808-CB33-48E2-BADD-8E1938CA901C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsLog4NetClient", "ApplicationInsightsLog4NetClient\ApplicationInsightsLog4NetClient.csproj", "{ED6EB0F3-55FD-4DEF-B58B-D2A88345E146}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationInsightsAzureFunctionLog4NetClient", "ApplicationInsightsAzureFunctionLog4NetClient\ApplicationInsightsAzureFunctionLog4NetClient.csproj", "{9CDAC047-94B2-4E5A-AB42-A38E0313839F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsNLogClient", "ApplicationInsightsNLogClient\ApplicationInsightsNLogClient.csproj", "{29AB6B64-1378-4F18-B72C-13693C12BFE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsEnterpriseLibraryClient", "ApplicationInsightsEnterpriseLibraryClient\ApplicationInsightsEnterpriseLibraryClient.csproj", "{6793774F-A3F8-439E-B4EA-3832A73F9958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsSerilog", "ApplicationInsightsSerilog\ApplicationInsightsSerilog.csproj", "{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{577BF808-CB33-48E2-BADD-8E1938CA901C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577BF808-CB33-48E2-BADD-8E1938CA901C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577BF808-CB33-48E2-BADD-8E1938CA901C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577BF808-CB33-48E2-BADD-8E1938CA901C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED6EB0F3-55FD-4DEF-B58B-D2A88345E146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6EB0F3-55FD-4DEF-B58B-D2A88345E146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6EB0F3-55FD-4DEF-B58B-D2A88345E146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6EB0F3-55FD-4DEF-B58B-D2A88345E146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDAC047-94B2-4E5A-AB42-A38E0313839F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDAC047-94B2-4E5A-AB42-A38E0313839F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDAC047-94B2-4E5A-AB42-A38E0313839F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDAC047-94B2-4E5A-AB42-A38E0313839F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AB6B64-1378-4F18-B72C-13693C12BFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AB6B64-1378-4F18-B72C-13693C12BFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AB6B64-1378-4F18-B72C-13693C12BFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AB6B64-1378-4F18-B72C-13693C12BFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6793774F-A3F8-439E-B4EA-3832A73F9958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6793774F-A3F8-439E-B4EA-3832A73F9958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6793774F-A3F8-439E-B4EA-3832A73F9958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6793774F-A3F8-439E-B4EA-3832A73F9958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {886133F8-293E-4301-A051-6BC28E2C191D}
+	EndGlobalSection
+EndGlobal
