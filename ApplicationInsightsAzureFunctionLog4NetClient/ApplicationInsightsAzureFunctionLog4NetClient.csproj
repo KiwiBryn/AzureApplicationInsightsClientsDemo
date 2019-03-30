@@ -17,9 +17,6 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.24" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="ApplicationInsights.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="host.json" CopyToPublishDirectory="Always">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
