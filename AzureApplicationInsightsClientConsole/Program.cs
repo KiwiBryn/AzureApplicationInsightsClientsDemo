@@ -34,19 +34,8 @@ namespace AzureApplicationInsightsClientConsole
 
 	class Program
    {
-      static DependencyTrackingTelemetryModule module = new DependencyTrackingTelemetryModule();
-
       static void Main(string[] args)
       {
-         TelemetryConfiguration configuration = TelemetryConfiguration.Active;
-
-			if (args.Length != 1)
-			{
-				Console.WriteLine("Command line argument InstrumentationKey missing");
-				return;
-			}
-			TelemetryConfiguration.Active.InstrumentationKey = args[0];
-
 			var telemetryClient = new TelemetryClient();
 
 			telemetryClient.TrackTrace("This is an AI API Verbose message", SeverityLevel.Verbose);
