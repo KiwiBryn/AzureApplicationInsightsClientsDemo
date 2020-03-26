@@ -25,28 +25,39 @@
 namespace AzureApplicationInsightsClientConsole
 {
 	using System;
-	using System.Net.Http;
 
 	using Microsoft.ApplicationInsights;
 	using Microsoft.ApplicationInsights.DataContracts;
-	using Microsoft.ApplicationInsights.DependencyCollector;
-	using Microsoft.ApplicationInsights.Extensibility;
+   using Microsoft.ApplicationInsights.Extensibility;
 
-	class Program
+   class Program
    {
       static void Main(string[] args)
       {
-			var telemetryClient = new TelemetryClient();
+#if INSTRUMENTATION_KEY_TELEMETRY_CONFIGURATION
+         if (args.Length != 1)
+         {
+            Console.WriteLine("Usage AzureApplicationInsightsClientConsole <instrumentationKey>");
+            return;
+         }
 
-			telemetryClient.TrackTrace("This is an AI API Verbose message", SeverityLevel.Verbose);
+         TelemetryConfiguration telemetryConfiguration = new TelemetryConfiguration(args[0]);
+         TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
+         telemetryClient.TrackTrace("INSTRUMENTATION_KEY_TELEMETRY_CONFIGURATION", SeverityLevel.Information);
+#endif
+#if INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG
+         TelemetryClient telemetryClient = new TelemetryClient();
+         telemetryClient.TrackTrace("INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG", SeverityLevel.Information);
+#endif
+         telemetryClient.TrackTrace("This is an AI API Verbose message", SeverityLevel.Verbose);
 			telemetryClient.TrackTrace("This is an AI API Information message", SeverityLevel.Information);
 			telemetryClient.TrackTrace("This is an AI API Warning message", SeverityLevel.Warning);
 			telemetryClient.TrackTrace("This is an AI API Error message", SeverityLevel.Error);
 			telemetryClient.TrackTrace("This is an AI API Critical message", SeverityLevel.Critical);
 
-			telemetryClient.Flush();
+         telemetryClient.Flush();
 
-			Console.WriteLine("Press <enter> to exit>");
+			Console.WriteLine("Press <enter> to exit");
 			Console.ReadLine();
       }
    }
