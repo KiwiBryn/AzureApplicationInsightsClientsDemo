@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureApplicationInsightsClientConsole", "AzureApplicationInsightsClientConsole\AzureApplicationInsightsClientConsole.csproj", "{577BF808-CB33-48E2-BADD-8E1938CA901C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsEnterpriseLibraryClient", "ApplicationInsightsEnterpriseLibraryClient\ApplicationInsightsEnterpriseLibraryClient.csproj", "{6793774F-A3F8-439E-B4EA-3832A73F9958}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsSerilog", "ApplicationInsightsSerilog\ApplicationInsightsSerilog.csproj", "{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureApplicationInsightsCoreClientConsole", "AzureApplicationInsightsCoreClientConsole\AzureApplicationInsightsCoreClientConsole.csproj", "{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,11 +47,16 @@ Global
 		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8202DD03-4EF4-4BE0-8346-3AA3CDA9A046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886133F8-293E-4301-A051-6BC28E2C191D}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.Logging.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
