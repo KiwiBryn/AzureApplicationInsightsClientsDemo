@@ -42,30 +42,29 @@ namespace AzureApplicationInsightsCoreClientConsole
             return;
          }
 
-         using( TelemetryConfiguration telemetryConfiguration = new TelemetryConfiguration(args[0]))
-         {
-            TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
-            telemetryClient.TrackTrace("INSTRUMENTATION_KEY_TELEMETRY_CONFIGURATION", SeverityLevel.Information);
+         TelemetryConfiguration telemetryConfiguration = new TelemetryConfiguration(args[0]);
+         TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
+         telemetryClient.TrackTrace("INSTRUMENTATION_KEY_TELEMETRY_CONFIGURATION", SeverityLevel.Information);
 #endif
 #if INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG
-         using (TelemetryConfiguration telemetryConfiguration = TelemetryConfiguration.CreateDefault())
-         {
-            TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
-            telemetryClient.TrackTrace("INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG", SeverityLevel.Information);
+         TelemetryConfiguration telemetryConfiguration = TelemetryConfiguration.CreateDefault();
+         
+         TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
+         telemetryClient.TrackTrace("INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG", SeverityLevel.Information);
 #endif
 
-            telemetryClient.Context.User.Id = Environment.UserName;
-            telemetryClient.Context.Device.Id =Environment.MachineName;
-            telemetryClient.Context.Operation.Name = "Test harness";
+         telemetryClient.Context.User.Id = Environment.UserName;
+         telemetryClient.Context.Device.Id =Environment.MachineName;
+         telemetryClient.Context.Operation.Name = "Test harness";
 
-            telemetryClient.TrackTrace("This is a .Net Core AI API Verbose message", SeverityLevel.Verbose);
-            telemetryClient.TrackTrace("This is a .Net Core AI API Information message", SeverityLevel.Information);
-            telemetryClient.TrackTrace("This is a .Net Core AI API Warning message", SeverityLevel.Warning);
-            telemetryClient.TrackTrace("This is a .Net Core AI API Error message", SeverityLevel.Error);
-            telemetryClient.TrackTrace("This is a .Net Core AI API Critical message", SeverityLevel.Critical);
+         telemetryClient.TrackTrace("This is a .Net Core AI API Verbose message", SeverityLevel.Verbose);
+         telemetryClient.TrackTrace("This is a .Net Core AI API Information message", SeverityLevel.Information);
+         telemetryClient.TrackTrace("This is a .Net Core AI API Warning message", SeverityLevel.Warning);
+         telemetryClient.TrackTrace("This is a .Net Core AI API Error message", SeverityLevel.Error);
+         telemetryClient.TrackTrace("This is a .Net Core AI API Critical message", SeverityLevel.Critical);
 
-            telemetryClient.Flush();
-         }
+         telemetryClient.Flush();
+
          Console.WriteLine("Press <enter> to exit");
          Console.ReadLine();
       }
