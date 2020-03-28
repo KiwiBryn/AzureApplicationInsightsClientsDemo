@@ -33,12 +33,17 @@ namespace devMobile.Azure.ApplicationInsightsLog4NetClientPoC
 
       static void Main(string[] args)
       {
-			if (args.Length != 1)
-			{
-				Console.WriteLine("Command line argument InstrumentationKey missing");
-				return;
-			}
-			TelemetryConfiguration.Active.InstrumentationKey = args[0];
+         if (( args.Length != 0) && (args.Length != 1 ))
+         {
+            Console.WriteLine("Usage AzureApplicationInsightsClientConsole");
+            Console.WriteLine("      AzureApplicationInsightsClientConsole <instrumentationKey>");
+            return;
+         }
+
+         if (args.Length == 1)
+         {
+            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+         }
 
 			log.Debug("This is a Log4Net Debug message");
          log.Info("This is a Log4Net Info message");
