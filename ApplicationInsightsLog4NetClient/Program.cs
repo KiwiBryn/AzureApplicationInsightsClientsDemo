@@ -25,11 +25,13 @@
 namespace devMobile.Azure.ApplicationInsightsLog4NetClientPoC
 {
 	using System;
+
+   using log4net;
 	using Microsoft.ApplicationInsights.Extensibility;
 
 	class Program
    {
-      private static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      private static ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
       static void Main(string[] args)
       {
