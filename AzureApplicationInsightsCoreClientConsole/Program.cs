@@ -32,7 +32,6 @@ namespace AzureApplicationInsightsCoreClientConsole
 
    class Program
    {
-
       static void Main(string[] args)
       {
 #if INSTRUMENTATION_KEY_TELEMETRY_CONFIGURATION
@@ -48,13 +47,11 @@ namespace AzureApplicationInsightsCoreClientConsole
 #endif
 #if INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG
          TelemetryConfiguration telemetryConfiguration = TelemetryConfiguration.CreateDefault();
-         
          TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
          telemetryClient.TrackTrace("INSTRUMENTATION_KEY_APPLICATION_INSIGHTS_CONFIG", SeverityLevel.Information);
 #endif
-
          telemetryClient.Context.User.Id = Environment.UserName;
-         telemetryClient.Context.Device.Id =Environment.MachineName;
+         telemetryClient.Context.Device.Id = Environment.MachineName;
          telemetryClient.Context.Operation.Name = "Test harness";
 
          telemetryClient.TrackTrace("This is a .Net Core AI API Verbose message", SeverityLevel.Verbose);
