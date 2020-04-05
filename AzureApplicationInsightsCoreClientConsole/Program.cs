@@ -62,6 +62,8 @@ namespace AzureApplicationInsightsCoreClientConsole
 
          telemetryClient.Flush();
 
+         telemetryConfiguration.Dispose(); // In real-world use a using or similar approach to ensure cleaned up
+
          Console.WriteLine("Press <enter> to exit");
          Console.ReadLine();
       }
