@@ -29,7 +29,8 @@ namespace ApplicationInsightsAzureFunctionLog4NetClient
 	using System.Reflection;
 	using log4net;
 	using log4net.Config;
-	using Microsoft.ApplicationInsights.Extensibility;
+   using Microsoft.ApplicationInsights;
+   using Microsoft.ApplicationInsights.Extensibility;
 	using Microsoft.Azure.WebJobs;
 
 	public static class ApplicationInsightsTimer
@@ -37,20 +38,23 @@ namespace ApplicationInsightsAzureFunctionLog4NetClient
 		[FunctionName("ApplicationInsightsTimerLog4Net")]
 		public static void Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, ExecutionContext executionContext)
 		{
-			ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+         ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-			TelemetryConfiguration.Active.InstrumentationKey = Environment.GetEnvironmentVariable("InstrumentationKey", EnvironmentVariableTarget.Process);
+         using (TelemetryConfiguration telemetryConfiguration = TelemetryConfiguration.CreateDefault())
+         {
+            TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
+ 
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo(Path.Combine(executionContext.FunctionAppDirectory, "log4net.config")));
 
-			var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-			XmlConfigurator.Configure(logRepository, new FileInfo(Path.Combine(executionContext.FunctionAppDirectory, "log4net.config")));
+            log.Debug("This is a Log4Net Debug message");
+            log.Info("This is a Log4Net Info message");
+            log.Warn("This is a Log4Net Warning message");
+            log.Error("This is a Log4Net Error message");
+            log.Fatal("This is a Log4Net Fatal message");
 
-			log.Debug("This is a Log4Net Debug message");
-			log.Info("This is a Log4Net Info message");
-			log.Warn("This is a Log4Net Warning message");
-			log.Error("This is a Log4Net Error message");
-			log.Fatal("This is a Log4Net Fatal message");
-
-			TelemetryConfiguration.Active.TelemetryChannel.Flush();
+            telemetryClient.Flush();
+         }
 		}
 	}
 }
