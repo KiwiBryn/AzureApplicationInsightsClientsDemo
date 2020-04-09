@@ -47,11 +47,11 @@ namespace devMobile.Azure.ApplicationInsightsLog4NetCoreClient
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
             XmlConfigurator.Configure(logRepository, new FileInfo(Path.Combine(Environment.CurrentDirectory, "log4net.config")));
 
-            log.Debug("This is a Log4Net Debug message");
-            log.Info("This is a Log4Net Info message");
-            log.Warn("This is a Log4Net Warning message");
-            log.Error("This is a Log4Net Error message");
-            log.Fatal("This is a Log4Net Fatal message");
+            log.Debug("This is a Log4Net Core Debug message");
+            log.Info("This is a Log4Net Core Info message");
+            log.Warn("This is a Log4Net Core Warning message");
+            log.Error("This is a Log4Net Core Error message");
+            log.Fatal("This is a Log4Net Core Fatal message");
 
             telemetryClient.Flush();
          }
