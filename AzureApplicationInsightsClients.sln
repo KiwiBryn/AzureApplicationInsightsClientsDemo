@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsSerilog"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureApplicationInsightsCoreClientConsole", "AzureApplicationInsightsCoreClientConsole\AzureApplicationInsightsCoreClientConsole.csproj", "{8DF20E8A-3AB1-4C7E-82E2-0D8DFE2FB249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationInsightsLog4NetCoreClient", "ApplicationInsightsLog4NetCoreClient\ApplicationInsightsLog4NetCoreClient.csproj", "{00BB09FC-DB96-42CE-80AD-A5B9BA9F3C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationInsightsLog4NetCoreClient", "ApplicationInsightsLog4NetCoreClient\ApplicationInsightsLog4NetCoreClient.csproj", "{00BB09FC-DB96-42CE-80AD-A5B9BA9F3C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
