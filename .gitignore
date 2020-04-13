@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /AzureApplicationInsightsCoreClientConsole/Properties/launchSettings.json
 /ApplicationInsightsLog4NetCoreClient/Properties/launchSettings.json
+/ApplicationInsightsNLogCoreClient/Properties/launchSettings.json
