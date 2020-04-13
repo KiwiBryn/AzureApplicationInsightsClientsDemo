@@ -25,12 +25,17 @@ namespace devMobile.Azure.ApplicationInsightsNLogClient
 
       static void Main(string[] args)
       {
-         if (args.Length != 1)
+         if ((args.Length != 0) && (args.Length != 1))
          {
-            Console.WriteLine("Command line argument InstrumentationKey missing");
+            Console.WriteLine("Usage ApplicationInsightsNLogClient");
+            Console.WriteLine("      ApplicationInsightsNLogClient <instrumentationKey>");
             return;
          }
-         TelemetryConfiguration.Active.InstrumentationKey = args[0];
+
+         if (args.Length == 1)
+         {
+            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+         }
 
          log.Trace("This is an nLog Trace message");
          log.Debug("This is an nLog Debug message");
@@ -39,7 +44,7 @@ namespace devMobile.Azure.ApplicationInsightsNLogClient
          log.Error("This is an nLog Error message");
          log.Fatal("This is an nLog Fatal message");
 
-         new Microsoft.ApplicationInsights.TelemetryClient().Flush();
+         TelemetryConfiguration.Active.TelemetryChannel.Flush();
 
 			Console.WriteLine("Press <enter> to exit>");
 			Console.ReadLine();
