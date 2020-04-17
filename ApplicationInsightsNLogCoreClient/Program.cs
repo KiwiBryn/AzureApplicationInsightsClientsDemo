@@ -15,9 +15,8 @@
 //---------------------------------------------------------------------------------
 using System;
 using Microsoft.ApplicationInsights.Extensibility;
-using NLog;
-using System;
 using Microsoft.ApplicationInsights;
+using NLog;
 
 namespace devMobile.Azure.ApplicationInsightsNLogCoreClient
 {
@@ -27,29 +26,6 @@ namespace devMobile.Azure.ApplicationInsightsNLogCoreClient
 
       static void Main(string[] args)
       {
-         /*
-         if ((args.Length != 0) && (args.Length != 1))
-         {
-            Console.WriteLine("Usage ApplicationInsightsNLogClient");
-            Console.WriteLine("      ApplicationInsightsNLogClient <instrumentationKey>");
-            return;
-         }
-
-         if (args.Length == 1)
-         {
-            TelemetryConfiguration.Active.InstrumentationKey = args[0];
-         }
-
-         log.Trace("This is an nLog Trace message");
-         log.Debug("This is an nLog Debug message");
-         log.Info("This is an nLog Info message");
-         log.Warn("This is an nLog Warning message");
-         log.Error("This is an nLog Error message");
-         log.Fatal("This is an nLog Fatal message");
-
-         TelemetryConfiguration.Active.TelemetryChannel.Flush();
-         */
-
          using (TelemetryConfiguration telemetryConfiguration = TelemetryConfiguration.CreateDefault())
          {
             TelemetryClient telemetryClient = new TelemetryClient(telemetryConfiguration);
