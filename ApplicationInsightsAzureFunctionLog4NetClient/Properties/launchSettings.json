@@ -3,7 +3,7 @@
     "ApplicationInsightsAzureFunctionLog4NetClient": {
       "commandName": "Project",
       "environmentVariables": {
-        "InstrumentationKey": "e05d750d-9ddd-46b0-a1cb-858c31c9785b"
+        "APPINSIGHTS_INSTRUMENTATIONKEY": ""
       }
     }
   }
