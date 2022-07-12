@@ -33,12 +33,17 @@ namespace ApplicationInsightsEnterpriseLibraryClient
    {
       static void Main(string[] args)
       {
-         if (args.Length != 1)
+         if ((args.Length != 0) && (args.Length != 1))
          {
-            Console.WriteLine("Command line argument InstrumentationKey missing");
+            Console.WriteLine("Usage ApplicationInsightsEnterpriseLibraryClient");
+            Console.WriteLine("      ApplicationInsightsEnterpriseLibraryClient <instrumentationKey>");
             return;
          }
-         TelemetryConfiguration.Active.InstrumentationKey = args[0];
+
+         if (args.Length == 1)
+         {
+            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+         }
 
          LogWriterFactory logWriterFactory = new LogWriterFactory();
          LogWriter logWriter = logWriterFactory.Create();
