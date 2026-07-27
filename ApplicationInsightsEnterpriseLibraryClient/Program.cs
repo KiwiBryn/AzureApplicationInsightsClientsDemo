@@ -42,7 +42,8 @@ namespace ApplicationInsightsEnterpriseLibraryClient
 
          if (args.Length == 1)
          {
-            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            //TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            TelemetryConfiguration.CreateDefault();
          }
 
          LogWriterFactory logWriterFactory = new LogWriterFactory();
@@ -72,9 +73,9 @@ namespace ApplicationInsightsEnterpriseLibraryClient
 
 			logWriter.Write("Application shutdown", "Shutdown");
 
-			TelemetryConfiguration.Active.TelemetryChannel.Flush();
+         //TelemetryConfiguration..TelemetryChannel.Flush();
 
-			Console.WriteLine("Press <enter> to exit>");
+         Console.WriteLine("Press <enter> to exit>");
 			Console.ReadLine();
 		}
 	}
