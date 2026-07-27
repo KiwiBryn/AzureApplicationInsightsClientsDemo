@@ -34,7 +34,8 @@ namespace devMobile.Azure.ApplicationInsightsNLogClient
 
          if (args.Length == 1)
          {
-            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            //TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            TelemetryConfiguration.CreateDefault().ConnectionString = args[0];
          }
 
          log.Trace("This is an nLog Trace message");
@@ -44,7 +45,7 @@ namespace devMobile.Azure.ApplicationInsightsNLogClient
          log.Error("This is an nLog Error message");
          log.Fatal("This is an nLog Fatal message");
 
-         TelemetryConfiguration.Active.TelemetryChannel.Flush();
+         //TelemetryConfiguration.Active.TelemetryChannel.Flush();
 
 			Console.WriteLine("Press <enter> to exit>");
 			Console.ReadLine();
