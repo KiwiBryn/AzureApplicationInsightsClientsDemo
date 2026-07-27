@@ -43,7 +43,7 @@ namespace ApplicationInsightsEnterpriseLibraryClient
          if (args.Length == 1)
          {
             //TelemetryConfiguration.Active.InstrumentationKey = args[0];
-            TelemetryConfiguration.CreateDefault();
+            TelemetryConfiguration.CreateDefault().ConnectionString = args[0];
          }
 
          LogWriterFactory logWriterFactory = new LogWriterFactory();
