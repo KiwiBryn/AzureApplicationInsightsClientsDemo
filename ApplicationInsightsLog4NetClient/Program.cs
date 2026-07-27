@@ -44,7 +44,8 @@ namespace devMobile.Azure.ApplicationInsightsLog4NetClientPoC
 
          if (args.Length == 1)
          {
-            TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            //TelemetryConfiguration.Active.InstrumentationKey = args[0];
+            TelemetryConfiguration.CreateDefault().ConnectionString = args[0];
          }
 
 			log.Debug("This is a Log4Net Debug message");
@@ -53,7 +54,7 @@ namespace devMobile.Azure.ApplicationInsightsLog4NetClientPoC
          log.Error("This is an Log4Net Error message");
          log.Fatal("This is a Log4Net Fatal message");
 
-			TelemetryConfiguration.Active.TelemetryChannel.Flush();
+			//TelemetryConfiguration.Active.TelemetryChannel.Flush();
 
 			Console.WriteLine("Press <enter> to exit>");
          Console.ReadLine();
